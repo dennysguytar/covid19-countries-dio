@@ -81,6 +81,16 @@ const globalStyle = createGlobalStyle`
     justify-content: center;
   }
 
+  .MuiPaper-rounded 
+  {
+    border-radius: 58px;
+  }
+
+  .MuiCardContent-root 
+  {  
+    border-radius: 60px;
+  }
+
 `
 
 export default globalStyle
