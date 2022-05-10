@@ -25,7 +25,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData })
 
   function textCovid19 (country, recovered)
   { 
-    return `País: ${country} - recuperados: ${recovered.toLocaleString("pt-BR")}` 
+    return `País: ${country} => recuperados: ${recovered.toLocaleString("pt-BR")} => Última atualização em: ${updateAt}` 
   }
 
   const copyInfo = (valueText) => 
@@ -33,7 +33,7 @@ function Panel({ updateAt, onChange, data, country, getCovidData })
     var dummy = document.createElement("textarea");
     document.body.appendChild(dummy);
     //dummy.value = textCovid19;
-    dummy.value = textCovid19 (country_label, recovered)
+    dummy.value = textCovid19(country_label, recovered)
 
     if (navigator.userAgent.match(/ipad|ipod|iphone/i)) 
     {
@@ -62,8 +62,8 @@ function Panel({ updateAt, onChange, data, country, getCovidData })
     (
       {
       title: `Dados do Covid19 - ${country}`,
-      text: textCovid19,
-      url: 'https://covid19-countries-dio.netlify.app/'
+      text: textCovid19(country_label, recovered),
+      url: 'https://covid19-countries-dio.netlify.app'
       }
     )
   }
